@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 })
 
-function onFormInput(event) {
+function onFormInput() {
   const formData = { email: `${email.value}`, message: `${message.value}` }
   localStorage.setItem('feedback-form-state', JSON.stringify(formData));
 }
