@@ -9,7 +9,13 @@ const onPlay = function (data) {
 }
 
 player.on('timeupdate', throttle(onPlay, 1000));
-player.setCurrentTime(`${localStorage.getItem('videoplayer-current-time')}`);
+
+if (localStorage.getItem('videoplayer-current-time') === null) {
+  player.setCurrentTime(`${localStorage.setItem('videoplayer-current-time', '0')}`);
+} else {
+  player.setCurrentTime(`${localStorage.getItem('videoplayer-current-time')}`);
+}
+
 
 
 
